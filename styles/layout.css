@@ -6,4 +6,52 @@
 
   height: 100vh;
   overflow: hidden;
+
+  main{
+    /* coloca a barra de rolagem somente no main */
+    overflow: auto;
+    padding: 4rem;
+    background-color: var(--surface-primary);
+  
+    & .main-container{
+      max-width: 33rem;
+      margin-left: auto;
+    }
+    
+    & .back{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    & h1{
+      font: 600 1.5rem/125% var(--font-family);
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  aside{
+    padding: 4rem;
+    background-color: var(--surface-secondary);
+    overflow: hidden;
+  
+    & .aside-container{
+      max-width: 31rem;
+
+      & .ilustration{
+        
+        margin-top: 2rem;
+      }
+    }
+    
+    & h2{
+      font: 600 2.5rem/125% var(--font-family);
+      margin-bottom: .5rem;
+
+      & span{
+        color: var(--text-highlight);
+      }
+    }
+  }
 }

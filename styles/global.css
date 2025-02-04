@@ -27,27 +27,16 @@
 body{
   /* garante que nunca vai ter rolamento, o transbordamento sempre será oculto */
   overflow: hidden;
+
+  font: var(--text);
+  color: var(--text-secondary)
 }
 
-main{
-  /* coloca a barra de rolagem somente no main */
-  overflow: auto;
-  padding: 4rem;
-  background-color: var(--surface-primary);
-
-  .main-container{
-    max-width: 33rem;
-    margin-left: auto;
-  }
-  
+h1,h2{
+  color: var(--text-primary)
 }
 
-aside{
-  padding: 4rem;
-  background-color: var(--surface-secondary);
-  overflow: hidden;
-
-  .aside-container{
-    max-width: 31rem;
-  }
+img{
+  max-width: 100%;
+  height: auto;
 }
