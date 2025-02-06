@@ -1,3 +1,5 @@
+@import url(drop-area.css);
+
 input,textarea,select{
   appearance: none;
   width: 100%;
@@ -16,9 +18,11 @@ label{
   margin-bottom: 1.5rem;
 }
 
+/* o focus-within serve também para qndo tiver com o calendário em focus, ele manter as mesmas estilizações e não simplesmente sumir tudo como se não tivesse selecionado nada */
 input:focus,
 select:focus,
-textarea:focus{
+textarea:focus,
+input[type="date"]:focus-within{
   outline: .25rem solid var(--surface-secondary);
   border: .125rem solid var(--stroke-highlight);
   /* esse outline é para conseguir fazer aparecer no safari já que dependendo do navegador, ele pode
