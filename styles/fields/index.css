@@ -1,0 +1,54 @@
+input,textarea,select{
+  appearance: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--stroke-default);
+  padding: .75rem 1rem;
+  font: var(--text);
+}
+
+label{
+  font: var(--text-sm);
+  color: var(--text-secondary);
+  
+  /* label por padrão é display inline, portanto não aceita margin */
+  display: block; 
+  margin-bottom: 1.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: .25rem solid var(--surface-secondary);
+  border: .125rem solid var(--stroke-highlight);
+  /* esse outline é para conseguir fazer aparecer no safari já que dependendo do navegador, ele pode
+  bugar*/
+  outline-offset: .1px;
+}
+
+input[type="date"]{
+  position: relative;
+  /* Após pesquisar, pra mexer no icone do calendario usa essa linha abaixo, mas para
+  fazer funcionar em diferentes navegadores eu vou esconder ele e usar o before para "redeenha-lo"*/
+  &::-webkit-calendar-picker-indicator{
+    opacity: 0%;
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+    background: url(../../assets/icons/calendar-03.svg) center/contain;
+    right: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+
+    /*"macete para centralizar coisas com position absolute */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+select{
+  /* A função calc calcula a exata posição que é pra ele ficar */
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
