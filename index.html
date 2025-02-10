@@ -54,7 +54,7 @@
             <div class="text-area-wrapper">
               <label for="medical-info">Informações médicas</label>
               <textarea 
-              cols="30" rows="7"
+              cols="30" rows="6"
               placeholder="A criança possui algum condição médica que a escola deve estar ciente? (Se sim, especifique)."
               name="medical-info" id="medical-info"></textarea>
             </div>
@@ -73,6 +73,54 @@
               </div>
             </div>
           </fieldset>
+        </form>
+
+        <form action="">
+          <fieldset class="address">
+            <legend>Endereço Residencial</legend>
+          </fieldset>
+
+          <div class="input-wrapper">
+            <label for="cep">CEP</label>
+            <input 
+            placeholder="Digite seu CEP aqui."
+            id="cep" name ="cep" type="text">
+          </div>
+
+          <div class="grid-wrapper">
+            <div class="input-wrapper">
+              <label for="street-name">Rua</label>
+              <input 
+              placeholder="Nome da rua"
+              value="Rua das Flores" disabled
+              id="street-name" name="street-name" type="text">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="number">Número</label>
+              <input 
+              placeholder="Número"
+              id="number" name="number" type="number">
+            </div>
+          </div>
+
+          <div class="grid-wrapper">
+            <div class="input-wrapper">
+              <label for="city-name">Cidade</label>
+              <input 
+              placeholder="Nome da cidade"
+              value="São Paulo" disabled
+              id="city-name" type="text">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="state">Estado</label>
+              <input 
+              value="SP" disabled
+              placeholder="Estado"
+              id="state" type="text">
+            </div>
+          </div>
         </form>
       </div>
     </main>

@@ -13,9 +13,9 @@ label{
   font: var(--text-sm);
   color: var(--text-secondary);
   
-  /* label por padrão é display inline, portanto não aceita margin */
+  /* label por padrão é display inline, portanto não aceita margin
   display: block; 
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; */
 }
 
 /* o focus-within serve também para qndo tiver com o calendário em focus, ele manter as mesmas estilizações e não simplesmente sumir tudo como se não tivesse selecionado nada */
@@ -55,4 +55,23 @@ input[type="date"]{
 select{
   /* A função calc calcula a exata posição que é pra ele ficar */
   background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
+
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.input-wrapper:has([disabled]){
+  opacity: 0.5;
+}
+
+input{
+  &[disabled]{
+    background-color: var(--surface-disabled);
+    border: 1px solid var(--stroke-default);
+    color: var(--text-primary);
+  }
 }
