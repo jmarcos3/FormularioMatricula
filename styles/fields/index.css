@@ -57,11 +57,15 @@ select{
   background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
 }
 
+fieldset + fieldset{
+  margin-top: 3rem;
+}
+
 .grid-wrapper{
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  
 }
 
 .input-wrapper:has([disabled]){
@@ -69,9 +73,35 @@ select{
 }
 
 input{
+  /* Se meu input tiver disabled */
   &[disabled]{
     background-color: var(--surface-disabled);
     border: 1px solid var(--stroke-default);
     color: var(--text-primary);
+  }
+  /* Se meu input tiver um small dentro */
+  & + small{
+    font: var(--text-sm);
+    color: #79716C;
+    display: inline-block;
+    margin-top: .25rem;
+  }
+  /* Se meu input estiver com o status de invalido */
+  &:invalid{
+    border: 0.125rem solid var(--semantic-error);
+  }
+  /* Se meu input for required e tiver um error dentro */
+  &:required + .error{
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+    margin-top: .25rem;
+  }
+  /* Se meu input não estiver focado e for valido, mas enquanto estiver focado ele aparecerá a mensagem */
+  &:not(:focus):valid + .error{
+    display: none;
   }
 }

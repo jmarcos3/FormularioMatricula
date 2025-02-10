@@ -73,54 +73,80 @@
               </div>
             </div>
           </fieldset>
-        </form>
 
-        <form action="">
           <fieldset class="address">
             <legend>Endereço Residencial</legend>
+            
+            <div class="input-wrapper">
+              <label for="cep">CEP</label>
+              <input 
+              placeholder="Digite seu CEP aqui."
+              id="cep" name ="cep" type="text">
+            </div>
+  
+            <div class="grid-wrapper">
+              <div class="input-wrapper">
+                <label for="street-name">Rua</label>
+                <input 
+                placeholder="Nome da rua"
+                value="Rua das Flores" disabled
+                id="street-name" name="street-name" type="text">
+              </div>
+  
+              <div class="input-wrapper">
+                <label for="number">Número</label>
+                <input 
+                placeholder="Número"
+                id="number" name="number" type="number">
+              </div>
+            </div>
+  
+            <div class="grid-wrapper">
+              <div class="input-wrapper">
+                <label for="city-name">Cidade</label>
+                <input 
+                placeholder="Nome da cidade"
+                value="São Paulo" disabled
+                id="city-name" type="text">
+              </div>
+  
+              <div class="input-wrapper">
+                <label for="state">Estado</label>
+                <input 
+                value="SP" disabled
+                placeholder="Estado"
+                id="state" type="text">
+              </div>
+            </div>
           </fieldset>
 
-          <div class="input-wrapper">
-            <label for="cep">CEP</label>
+          <fieldset class="guardian">
+            <legend>Informações do responsável</legend>
+            <div class="input-wrapper">
+              <label for="guardian">Nome do responsável</label>
+              <input type="text" id="guardian" name="guardian">
+              <small>Principal responsável legal e contato de emergência</small>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="phone">Telefone</label>
+              <input
+              placeholder="(10) 9 8765-4321"
+              type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="input-wrapper">
+            <label for="mail">Email</label>
             <input 
-            placeholder="Digite seu CEP aqui."
-            id="cep" name ="cep" type="text">
-          </div>
+            required
+            type="email" name="mail" name="mail">
 
-          <div class="grid-wrapper">
-            <div class="input-wrapper">
-              <label for="street-name">Rua</label>
-              <input 
-              placeholder="Nome da rua"
-              value="Rua das Flores" disabled
-              id="street-name" name="street-name" type="text">
+            <div class="error">
+              <img src="./assets/icons/alert-circle.svg" alt="Icone de Alerta Vermelho">
+              <span>Insira um e-mail válido</span>
             </div>
-
-            <div class="input-wrapper">
-              <label for="number">Número</label>
-              <input 
-              placeholder="Número"
-              id="number" name="number" type="number">
             </div>
-          </div>
-
-          <div class="grid-wrapper">
-            <div class="input-wrapper">
-              <label for="city-name">Cidade</label>
-              <input 
-              placeholder="Nome da cidade"
-              value="São Paulo" disabled
-              id="city-name" type="text">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="state">Estado</label>
-              <input 
-              value="SP" disabled
-              placeholder="Estado"
-              id="state" type="text">
-            </div>
-          </div>
+          </fieldset>
         </form>
       </div>
     </main>
