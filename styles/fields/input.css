@@ -1,0 +1,105 @@
+input,textarea,select{
+  appearance: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--stroke-default);
+  padding: .75rem 1rem;
+  font: var(--text);
+}
+
+label{
+  font: var(--text-sm);
+  color: var(--text-secondary);
+  
+  /* label por padrão é display inline, portanto não aceita margin
+  display: block; 
+  margin-bottom: 1.5rem; */
+}
+
+/* o focus-within serve também para qndo tiver com o calendário em focus, ele manter as mesmas estilizações e não simplesmente sumir tudo como se não tivesse selecionado nada */
+input:focus,
+select:focus,
+textarea:focus,
+input[type="date"]:focus-within{
+  outline: .25rem solid var(--surface-secondary);
+  border: .125rem solid var(--stroke-highlight);
+  /* esse outline é para conseguir fazer aparecer no safari já que dependendo do navegador, ele pode
+  bugar*/
+  outline-offset: .1px;
+}
+
+input[type="date"]{
+  position: relative;
+  /* Após pesquisar, pra mexer no icone do calendario usa essa linha abaixo, mas para
+  fazer funcionar em diferentes navegadores eu vou esconder ele e usar o before para "redeenha-lo"*/
+  &::-webkit-calendar-picker-indicator{
+    opacity: 0%;
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+    background: url(../../assets/icons/calendar-03.svg) center/contain;
+    right: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+
+    /*"macete para centralizar coisas com position absolute */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+select{
+  /* A função calc calcula a exata posição que é pra ele ficar */
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
+
+fieldset + fieldset{
+  margin-top: 3rem;
+}
+
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  
+}
+
+.input-wrapper:has([disabled]){
+  opacity: 0.5;
+}
+
+input{
+  /* Se meu input tiver disabled */
+  &[disabled]{
+    background-color: var(--surface-disabled);
+    border: 1px solid var(--stroke-default);
+    color: var(--text-primary);
+  }
+  /* Se meu input tiver um small dentro */
+  & + small{
+    font: var(--text-sm);
+    color: #79716C;
+    display: inline-block;
+    margin-top: .25rem;
+  }
+  /* Se meu input estiver com o status de invalido */
+  &:invalid{
+    border: 0.125rem solid var(--semantic-error);
+  }
+  /* Se meu input for required e tiver um error dentro */
+  &:required + .error{
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+    margin-top: .25rem;
+  }
+  /* Se meu input não estiver focado e for valido, mas enquanto estiver focado ele aparecerá a mensagem */
+  &:not(:focus):valid + .error{
+    display: none;
+  }
+}
