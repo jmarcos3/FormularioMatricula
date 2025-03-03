@@ -4,7 +4,7 @@ Este projeto consiste na criação de uma página web desktop para uma escola de
 
 ![Preview do Projeto](.github/image.png)
 
-[🔗 Acesse o projeto aqui](https://jmarcos3.github.io/FormulariosMatricula/)
+[🔗 Acesse o projeto aqui](https://jmarcos3.github.io/FormularioMatricula/)
 
 ---
 ## 🛠️ Tecnologias Utilizadas
