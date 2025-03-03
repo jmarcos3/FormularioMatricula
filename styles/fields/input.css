@@ -2,7 +2,8 @@ input,textarea,select{
   appearance: none;
   width: 100%;
   border-radius: 0.5rem;
-  border: 1px solid var(--stroke-default);
+  border: 2px solid transparent;
+  outline: 1px solid var(--stroke-default);
   padding: .75rem 1rem;
   font: var(--text);
 }
@@ -10,7 +11,6 @@ input,textarea,select{
 label{
   font: var(--text-sm);
   color: var(--text-secondary);
-  
   /* label por padrão é display inline, portanto não aceita margin
   display: block; 
   margin-bottom: 1.5rem; */
@@ -22,7 +22,7 @@ select:focus,
 textarea:focus,
 input[type="date"]:focus-within{
   outline: .25rem solid var(--surface-secondary);
-  border: .125rem solid var(--stroke-highlight);
+  border-color: var(--stroke-highlight);
   /* esse outline é para conseguir fazer aparecer no safari já que dependendo do navegador, ele pode
   bugar*/
   outline-offset: .1px;

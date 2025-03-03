@@ -1,5 +1,6 @@
 .dropzone{
-  border: 1px var(--stroke-default) dashed;
+  border: 2px dashed transparent;
+  outline: 1px var(--stroke-default) dashed;
   border-radius: 0.25rem;
   display: grid;
   justify-items: center;
@@ -22,7 +23,7 @@
 
   /* Esse &:has(input:focus) serve para verificar quandoa  g nt vai dando tab na pagina para que ele também fique em foco */
   &:hover, &:has(input:focus){
-    border-width: 2px;
+    outline-width: 0;
     border-color: var(--stroke-highlight);
     background-color: var(--surface-secondary);
     
